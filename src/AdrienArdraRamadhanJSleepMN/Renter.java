@@ -13,19 +13,19 @@ public class Renter extends Serializable
     public String address;
     public int phoneNumber;
     Renter(int id, String username){
-        super(id);
+        super();
         this.username = username;
     }
     Renter(int id, String username, String address){
-        super(id);
+        super();
         this.username = username;
     }
     Renter(int id, String username, int phoneNumber){
-        super(id);
+        super();
         this.username = username;
     }
     Renter(int id, String username, int phoneNumber, String address){
-        super(id);
+        super();
         this.phoneNumber = phoneNumber;
         this.address = address;
     }

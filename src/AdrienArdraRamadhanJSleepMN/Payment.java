@@ -5,55 +5,59 @@ import java.util.Calendar;
 
 public class Payment extends Invoice
 {
-    public Date to;
     public Date from;
+    public Date to;
     private int roomId;
     
     public Payment(int id, Account buyer, Renter renter, int roomId, Date from, Date to)
     {
         super(id, buyer, renter);
+        this.to = to;
         this.roomId = roomId;
         this.from = from;
-        this.to = to;
     }
 
     public Payment(int id, int buyerId, int renterId, int roomId, Date from, Date to)
     {
         super(id, buyerId, renterId);
-        this.roomId = roomId;
-        this.from = from;
         this.to = to;
-    }
-    
-    public String getTime()
-    {
-        SimpleDateFormat SDFormat = new SimpleDateFormat("'Formatted Date = 'dd MMMM yyyy");
-        String formattedFrom = SDFormat.format(from.getTime());
-        return formattedFrom;
+        this.from = from;
+        this.roomId = roomId;
     }
     
     public String print()
     {
-        return ("Room ID: " + this.roomId + "\n"+ "Payment from: " + this.from + "\n" + "Payment to: " + this.to + "\n");
+        return ("Room ID: "
+                + this.roomId
+                + "\n"
+                +
+                "Payment from: "
+                + this.from
+                + "\n"
+                + "Payment to: "
+                + this.to
+                + "\n");
     }
-    
     public int getRoomId()
     {
         return roomId;
     }
-    
+    public String getTime() {
+        SimpleDateFormat SDFormat = new SimpleDateFormat("'Formatted Date = 'dd MMMM yyyy");
+        String formattedFrom = SDFormat.format(from.getTime());
+        return formattedFrom;
+    }
     public static boolean availability(Date from, Date to, Room room)
     {
-        /**Jika room belum pernah dibooking maka return true */
-        if(room.booked.isEmpty()){
+        if(room.booked.isEmpty())
+        {
             return true;
         }
-        /**Jika tanggal to lebih kecil dari from maka return false */
         if(to.before(from))
             return false;
-            
-        for(Date i : room.booked){
-            if(i.after(from) && i.before(to) || i.equals(from)){
+        for(Date j : room.booked)
+        {
+            if(j.after(from) && j.before(to) || j.equals(from)){
                 return false;
             }
         }
@@ -63,19 +67,21 @@ public class Payment extends Invoice
     public static boolean makeBooking(Date from, Date to, Room room)
     {
         SimpleDateFormat SDFormat = new SimpleDateFormat("dd MMMM yyyy");
-        String formattedFrom = SDFormat.format(from.getTime());
-        String formattedTo = SDFormat.format(to.getTime());
-        Calendar c = Calendar.getInstance();
-        
+        String bookingFrom = SDFormat.format(from.getTime());
+        Calendar calendar = Calendar.getInstance();
+        String bookingTo = SDFormat.format(to.getTime());
+        calendar.setTime(from);
         if(availability(from, to, room)){
             while(from.before(to)){
                 room.booked.add(from);
-                c.setTime(from);
-                c.add(Calendar.DATE, 1);
-                from = c.getTime();
+                calendar.setTime(from);
+                calendar.add(Calendar.DATE, 1);
+                from = calendar.getTime();
             }
             return true;
-        }else{
+        }
+        else
+        {
             return false;
         }
     }
