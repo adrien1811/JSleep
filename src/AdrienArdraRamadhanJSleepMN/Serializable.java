@@ -1,7 +1,4 @@
 package AdrienArdraRamadhanJSleepMN;
-
-
-
 import java.util.HashMap;
 public class Serializable {
 
@@ -14,18 +11,26 @@ public class Serializable {
         idCount++;
     }
     public int CompareTo(Serializable val){
-        return ((Integer)this.id).compareTo(val.id);
+        return id - this.id;
     }
     public <T> Integer setClosingId(Class<T> setter, int number){
+
         return mapCounter.replace(setter, number);
     }
 
     public <T> Integer getClosingId(Class<T> getter){
+
         return mapCounter.get(getter);
     }
 
     public boolean equals(Object val){
-        return (val instanceof Serializable && ((Serializable) val).id == this.id);
+        if (val == null) {
+            return false;
+        } else if (val instanceof Serializable) {
+
+            return id == ((Serializable) val).id;
+        }
+        return super.equals(val);
     }
 
     public boolean equals(Serializable val){
