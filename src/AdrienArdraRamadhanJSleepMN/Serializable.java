@@ -1,39 +1,40 @@
 package AdrienArdraRamadhanJSleepMN;
 import java.util.HashMap;
+
+import java.util.HashMap;
+
 public class Serializable {
-
     public final int id;
-    private static HashMap<Class <?>, Integer> mapCounter = new HashMap<Class <?>, Integer>();
+    private static HashMap<Class<?>, Integer> mapCounter = new HashMap<Class<?>, Integer>();
 
-    protected Serializable(){
-        int idCount = 0;
-        this.id = idCount;
-        idCount++;
-    }
-    public int CompareTo(Serializable val){
-        return id - this.id;
-    }
-    public <T> Integer setClosingId(Class<T> setter, int number){
-
-        return mapCounter.replace(setter, number);
-    }
-
-    public <T> Integer getClosingId(Class<T> getter){
-
-        return mapCounter.get(getter);
-    }
-
-    public boolean equals(Object val){
-        if (val == null) {
-            return false;
-        } else if (val instanceof Serializable) {
-
-            return id == ((Serializable) val).id;
+    protected Serializable() {
+        Integer counter = mapCounter.get(getClass());
+        if (counter == null){
+            counter =  0;
         }
-        return super.equals(val);
+        else{
+            counter +=1;
+        }
+        mapCounter.put(getClass(), counter);
+        this.id = counter;
     }
 
-    public boolean equals(Serializable val){
-        return val.id == this.id;
+    public static <T extends Serializable> Integer setClosingId(Class<T> clazz, int id) { return mapCounter.put(clazz, id); }
+
+    public static <T extends Serializable> Integer getClosingId(Class<T> clazz) { return mapCounter.get(clazz); }
+
+    public boolean equals(Object other)
+    {
+        return other instanceof Serializable && ((Serializable) other).id == id;
+    }
+
+    public boolean equals(Serializable other)
+    {
+        return other.id == id;
+    }
+
+    public int compareTo(Serializable other)
+    {
+        return Integer.compare(this.id, other.id);
     }
 }

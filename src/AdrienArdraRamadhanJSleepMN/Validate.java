@@ -1,20 +1,23 @@
 package AdrienArdraRamadhanJSleepMN;
 import java.util.ArrayList;
 
-public class Validate
-{
-    public static ArrayList filter(Price[] list, int value, boolean less){
-        ArrayList array = new ArrayList();
-        for(Price lis : list){
-            if(lis.price <= value && less)
-            {
-                array.add(lis.price);
-            }
-            else if(lis.price > value && !less)
-            {
-                array.add(lis.price);
+public class Validate {
+    public static ArrayList filter (Price[] list, int value, boolean less){
+        ArrayList filteredPrice = new ArrayList();
+        if(less == true) {
+            for (Price iterator : list) {
+                if(iterator.price <= value){
+                    filteredPrice.add(iterator.price);
+                }
             }
         }
-        return array;
+        else{
+            for (Price iterator : list) {
+                if(iterator.price > value){
+                    filteredPrice.add(iterator.price);
+                }
+            }
+        }
+        return filteredPrice;
     }
 }

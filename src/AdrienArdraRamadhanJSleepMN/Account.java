@@ -2,7 +2,7 @@ package AdrienArdraRamadhanJSleepMN;
 
 
 
-public class Account extends Serializable implements FileParser{
+public class Account extends Serializable {
 
     public String name;
     public String email;

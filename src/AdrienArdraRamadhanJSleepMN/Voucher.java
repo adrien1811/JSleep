@@ -7,7 +7,7 @@ package AdrienArdraRamadhanJSleepMN;
  * @author (your name)
  * @version (a version number or a date)
  */
-public abstract class Voucher extends Serializable implements FileParser
+public abstract class Voucher extends Serializable
 {
     public Type type;
     public double cut;
