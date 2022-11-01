@@ -33,15 +33,5 @@ public class JSleep
                 Facility.WiFi, City.DEPOK, "JL. Margonda Raya");
         return room;
     }
-    public static List<Room> filterByCity(List<Room> list, String search, int page, int pageSize){
-
-    }
-
-    public static List<Room> filterByPrice(List<Room> list, double minPrice, double maxPrice){
-
-    }
-
-    public static List<Room> filterByAccountId(List<Room> list, int accountId, int page, int pageSize){
-
-    }
+    
     }
