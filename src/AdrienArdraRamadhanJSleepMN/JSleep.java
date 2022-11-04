@@ -19,15 +19,6 @@ public class JSleep {
         Renter testRegexFail = new Renter("netlab", "081", "Jalan");
         System.out.println(testRegex.validate());
         System.out.println(testRegexFail.validate()); **/
-        try {
-            String filepath = "C:\\Users\\ADRIEN\\OneDrive\\Kuliah smt 3\\OOP\\CS\\JSleep\\src\\json\\randomRoomList.json";
-            JsonTable<Room> tableRoom = new JsonTable<>(Room.class, filepath);
-            List<Room> filterTableRoom = filterByCity(tableRoom, "medan", 0, 5);
-            filterTableRoom.forEach(room -> System.out.println(room.toString()));
-        }
-        catch (Throwable t){
-            t.printStackTrace();
-        }
         try{
             String filepath = "C:\\Users\\ADRIEN\\OneDrive\\Kuliah smt 3\\OOP\\CS\\JSleep\\src\\json\\account.json.txt";
             JsonTable <Account> tableAccount = new JsonTable<>(Account.class, filepath);
@@ -36,6 +27,15 @@ public class JSleep {
         }
         catch (Throwable t)
         {
+            t.printStackTrace();
+        }
+        try {
+            String filepath = "C:\\Users\\ADRIEN\\OneDrive\\Kuliah smt 3\\OOP\\CS\\JSleep\\src\\json\\randomRoomList.json";
+            JsonTable<Room> tableRoom = new JsonTable<>(Room.class, filepath);
+            List<Room> filterTableRoom = filterByCity(tableRoom, "medan", 0, 5);
+            filterTableRoom.forEach(room -> System.out.println(room.toString()));
+        }
+        catch (Throwable t){
             t.printStackTrace();
         }
         for(int i=0; i<10; i++){
