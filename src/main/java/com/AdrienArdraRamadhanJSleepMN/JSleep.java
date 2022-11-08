@@ -4,6 +4,7 @@ import java.util.List;
 import com.AdrienArdraRamadhanJSleepMN.dbjson.JsonTable;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.AdrienArdraRamadhanJSleepMN.dbjson.JsonDBEngine;
 
 public class JSleep {
     @SpringBootApplication
@@ -13,37 +14,9 @@ public class JSleep {
         public List<String> listOfStates;
     }
     public static void main(String[] args) {
+        JsonDBEngine.Run(JSleep.class);
         SpringApplication.run(JSleep.class, args);
-        /** Renter testRegex = new Renter("Netlab_", "081234567890", "Jl Jalan");
-        Renter testRegexFail = new Renter("netlab", "081", "Jalan");
-        System.out.println(testRegex.validate());
-        System.out.println(testRegexFail.validate()); **/
-        try{
-            String filepath = "C:\\Users\\ADRIEN\\OneDrive\\Kuliah smt 3\\OOP\\CS\\JSleep\\src\\json\\account.json.txt";
-            JsonTable<Algorithm.Account> tableAccount = new JsonTable<>(Algorithm.Account.class, filepath);
-            tableAccount.add(new Algorithm.Account("name", "email", "password"));
-            tableAccount.writeJson();
-        }
-        catch (Throwable t)
-        {
-            t.printStackTrace();
-        }
-        try {
-            String filepath = "C:\\Users\\ADRIEN\\OneDrive\\Kuliah smt 3\\OOP\\CS\\JSleep\\src\\json\\randomRoomList.json";
-            JsonTable<BedType.Room> tableRoom = new JsonTable<>(BedType.Room.class, filepath);
-            List<BedType.Room> filterTableRoom = filterByCity(tableRoom, "medan", 0, 5);
-            filterTableRoom.forEach(room -> System.out.println(room.toString()));
-        }
-        catch (Throwable t){
-            t.printStackTrace();
-        }
-        for(int i=0; i<10; i++){
-            ThreadingObject thread = new ThreadingObject("Thread " + i);
-        }
-        Algorithm.Account testRegex = new Algorithm.Account("Adrien Ardra Ramadhan","adrienardra@gmail.com", "Adrien123");
-        Algorithm.Account testRegexFail =new Algorithm.Account("Adrien Ardra Ramadhan","adrien-ardra-ramadhan@gmail.com", "adrien100");
-        System.out.println(testRegex.validate());
-        System.out.println(testRegexFail.validate());
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> JsonDBEngine.join()));
     }
 
     public static BedType.Room createRoom(){
