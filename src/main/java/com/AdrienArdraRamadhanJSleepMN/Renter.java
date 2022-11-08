@@ -15,20 +15,19 @@ public class Renter extends Serializable
     public String phoneNumber;
 
     public Renter(String username, String phoneNumber, String address){
-     super();
-     this.username = username;
-     this.address = address;
-     this.phoneNumber = phoneNumber;
+        super();
+        this.username = username;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
     }
     public boolean validate(){
-            if(
-                    this.username.matches(REGEX_NAME) && this.phoneNumber.matches(REGEX_PHONE)){
+        if(
+                this.username.matches(REGEX_NAME) && this.phoneNumber.matches(REGEX_PHONE)){
 
-                return true;
-            }
-
-            return false;
-
+            return true;
         }
-    }
 
+        return false;
+
+    }
+}

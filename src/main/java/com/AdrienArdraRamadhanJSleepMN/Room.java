@@ -13,7 +13,7 @@ public class Room extends Serializable
     public String address;
     public City city;
     public ArrayList<Date> booked;
-    
+
     public Room(int accountId, String name, int size, Price price, Facility facility, City city, String address){
         super();
         this.name = name;

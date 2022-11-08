@@ -1,8 +1,5 @@
 package com.AdrienArdraRamadhanJSleepMN;
 
-
-
-
 public class Account extends Serializable {
 
     public String name;
@@ -11,11 +8,11 @@ public class Account extends Serializable {
     public static final String REGEX_PASSWORD = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
     public String password;
     /** public Account(int id, String name, String email, String password){
-        super();
-        this.name = name;
-        this.email = email;
-        this.password = password;
-    } **/
+     super();
+     this.name = name;
+     this.email = email;
+     this.password = password;
+     } **/
     public Account(String name, String email, String password){
         this.name = name;
         this.email = email;

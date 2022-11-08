@@ -1,4 +1,4 @@
-package com.AdrienArdraRamadhanJSleepMN;
+package com.AdrienArdraRamadhanJSleepMN.dbjson;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
