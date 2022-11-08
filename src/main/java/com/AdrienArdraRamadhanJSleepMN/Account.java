@@ -1,5 +1,6 @@
 package com.AdrienArdraRamadhanJSleepMN;
 
+
 public class Account extends Serializable {
 
     public String name;
