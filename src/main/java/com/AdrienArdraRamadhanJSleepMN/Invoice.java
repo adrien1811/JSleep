@@ -1,9 +1,9 @@
 package com.AdrienArdraRamadhanJSleepMN;
-import java.util.Date;
+import com.AdrienArdraRamadhanJSleepMN.dbjson.Serializable;
 
 public class Invoice extends Serializable
 {
-    public Date time;
+
     public int buyerId;
     public int renterId;
     public PaymentStatus status;
@@ -12,14 +12,12 @@ public class Invoice extends Serializable
     protected Invoice(int id, int buyerId){
         super();
         this.renterId = renterId;
-        this.time = new Date();
         this.rating = RoomRating.NONE;
         this.status = PaymentStatus.WAITING;
         this.buyerId = buyerId;
     }
     public Invoice(Account buyer, Renter renter){
         super();
-        this.time = new Date();
         this.renterId = renter.id;
         this.buyerId = buyer.id;
         this.rating = RoomRating.NONE;
@@ -38,7 +36,6 @@ public class Invoice extends Serializable
                 + "\n" + "buyerId : "
                 + buyerId + "\n" + "renterId : "
                 + renterId + "\n" + "time : "
-                + time + "\n"
                 + "Room Rating : "
                 + rating + "\n" + "Payment Status :"
                 + status + "\n";

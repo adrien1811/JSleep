@@ -1,6 +1,8 @@
 package com.AdrienArdraRamadhanJSleepMN;
 
 
+import com.AdrienArdraRamadhanJSleepMN.dbjson.Serializable;
+
 /**
  * Write a description of class Complaint here.
  *

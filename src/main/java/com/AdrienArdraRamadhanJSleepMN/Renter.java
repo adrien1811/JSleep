@@ -5,6 +5,8 @@ package com.AdrienArdraRamadhanJSleepMN;
  * @author (your name)
  * @version (a version number or a date)
  */
+import com.AdrienArdraRamadhanJSleepMN.dbjson.Serializable;
+
 import java.util.regex.Pattern;
 public class Renter extends Serializable
 {
@@ -13,6 +15,7 @@ public class Renter extends Serializable
     public String username;
     public String address;
     public String phoneNumber;
+    public int id;
 
     public Renter(String username, String phoneNumber, String address){
         super();

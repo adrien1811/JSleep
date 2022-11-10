@@ -1,6 +1,8 @@
 package com.AdrienArdraRamadhanJSleepMN;
 
 
+import com.AdrienArdraRamadhanJSleepMN.dbjson.Serializable;
+
 public class Account extends Serializable {
 
     public String name;

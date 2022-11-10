@@ -1,4 +1,6 @@
 package com.AdrienArdraRamadhanJSleepMN;
+import com.AdrienArdraRamadhanJSleepMN.dbjson.Serializable;
+
 import java.util.ArrayList;
 import java.util.Date;
 
