@@ -1,4 +1,5 @@
 package com.AdrienArdraRamadhanJSleepMN.dbjson;
+import com.AdrienArdraRamadhanJSleepMN.Payment;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
@@ -54,4 +55,5 @@ public class JsonTable<T> extends Vector<T> {
         final JsonReader reader = new JsonReader(new FileReader(filepath));
         return gson.fromJson(reader, clazz);
     }
+
 }

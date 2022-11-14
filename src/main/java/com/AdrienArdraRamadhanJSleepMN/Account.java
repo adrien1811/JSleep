@@ -7,6 +7,9 @@ public class Account extends Serializable {
 
     public String name;
     public String email;
+    public double balance;
+
+    public Renter renter;
     public static final String REGEX_EMAIL = "^[a-zA-Z0-9]+@{1}[a-zA-Z]+\\.{1}[.a-zA-Z]*[a-zA-Z]$";
     public static final String REGEX_PASSWORD = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
     public String password;

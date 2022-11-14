@@ -22,7 +22,7 @@ import com.AdrienArdraRamadhanJSleepMN.Renter;
 public class AccountController implements BasicGetController
 {
     public static final String REGEX_PASSWORD = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
-    private JsonTable<Account> accountTable;
+    public static JsonTable<Account> accountTable;
     public static final String REGEX_EMAIL = "^[a-zA-Z0-9]+@{1}[a-zA-Z]+\\.{1}[.a-zA-Z]*[a-zA-Z]$";
     public Pattern REGEX_PATTERN_PASSWORD=Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$");
     public Pattern REGEX_PATTERN_EMAIL;
