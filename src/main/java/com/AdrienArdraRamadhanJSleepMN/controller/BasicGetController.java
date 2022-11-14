@@ -26,9 +26,8 @@ public interface BasicGetController<T extends Serializable> {
     @GetMapping("/{id}")
     public default T getById(
             @PathVariable int id
-    )
-    {
-        return Algorithm.<T>find(getJsonTable(),e -> e.id == id);
+    ) {
+        return Algorithm.<T>find(getJsonTable(), e -> e.id == id);
     }
 }
 
