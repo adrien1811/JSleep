@@ -1,4 +1,5 @@
-package com.AdrienArdraRamadhanJSleepMN.dbjson;
+package com.netlabJsleepGS.dbjson;
+
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 

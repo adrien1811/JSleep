@@ -21,7 +21,7 @@ public class VoucherController implements BasicGetController<Voucher> {
     }
     @GetMapping ("/getAvailable ")
     List<Voucher> getAvailable (@RequestParam int page, @RequestParam int size){
-       return Algorithm.<Voucher>paginate(voucherTable, page, size, pred -> !pred.isUsed());
+        return Algorithm.<Voucher>paginate(voucherTable, page, size, pred -> !pred.isUsed());
     }
     @JsonAutowired(value = Voucher.class, filepath = "src/json/voucher.json")
     public static JsonTable<Voucher> voucherTable;

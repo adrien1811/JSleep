@@ -15,7 +15,6 @@ public class Renter extends Serializable
     public String username;
     public String address;
     public String phoneNumber;
-    public int id;
 
     public Renter(String username, String phoneNumber, String address){
         super();
