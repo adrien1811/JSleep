@@ -2,10 +2,9 @@ package com.AdrienArdraRamadhanJSleepMN;
 
 
 /**
- * Enumeration class Facility - write a description of the enum class here
- *
- * @author (your name here)
- * @version (version number or date here)
+ * Enumeration class Facility
+ * This enum is used to represent the facilities of a room
+ * @author Adrien Ardra
  */
 public enum Facility
 {

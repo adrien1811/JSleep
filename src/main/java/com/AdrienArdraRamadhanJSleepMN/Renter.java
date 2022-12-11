@@ -17,10 +17,9 @@ public class Renter extends Serializable
     public String phoneNumber;
 
     public Renter(String username, String phoneNumber, String address){
-        super();
         this.username = username;
-        this.address = address;
         this.phoneNumber = phoneNumber;
+        this.address = address;
     }
     public boolean validate(){
         if(

@@ -1,6 +1,6 @@
 package com.AdrienArdraRamadhanJSleepMN;
 import com.AdrienArdraRamadhanJSleepMN.dbjson.Serializable;
-
+import com.AdrienArdraRamadhanJSleepMN.Facility;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -9,14 +9,14 @@ public class Room extends Serializable
     public int size;
     public String name;
     public int accountId;
-    public Facility facility;
+    public ArrayList<Facility> facility;
     public BedType bedType;
     public Price price;
     public String address;
     public City city;
     public ArrayList<Date> booked;
 
-    public Room(int accountId, String name, int size, Price price, Facility facility, City city, String address){
+    public Room(int accountId, String name, int size, Price price,ArrayList<Facility> facility, City city, String address,BedType bedType){
         super();
         this.name = name;
         this.size = size;
@@ -24,7 +24,7 @@ public class Room extends Serializable
         this.city = city;
         this.facility = facility;
         this.address = address;
-        this.bedType = BedType.SINGLE;
+        this.bedType = bedType;
         this.accountId = accountId;
         this.booked = new ArrayList<Date>();
     }
