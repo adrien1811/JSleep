@@ -11,7 +11,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.AdrienArdraRamadhanJSleepMN.dbjson.JsonTable;
 
-
+/**
+ * Write a description of class JSleep here.
+ *
+ * @author Adrien Ardra Ramadhan
+ */
 @SpringBootApplication
 public class JSleep {
 

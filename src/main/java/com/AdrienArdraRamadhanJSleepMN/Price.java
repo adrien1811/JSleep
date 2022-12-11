@@ -2,10 +2,8 @@ package com.AdrienArdraRamadhanJSleepMN;
 
 
 /**
- * Write a description of class Price here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * This class is used to store the information of a price.
+ * @author Adrien Ardra
  */
 public class Price
 {

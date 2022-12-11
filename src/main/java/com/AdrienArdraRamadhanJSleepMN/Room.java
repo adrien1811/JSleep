@@ -3,7 +3,12 @@ import com.AdrienArdraRamadhanJSleepMN.dbjson.Serializable;
 import com.AdrienArdraRamadhanJSleepMN.Facility;
 import java.util.ArrayList;
 import java.util.Date;
-
+/**
+ * Room class
+ * This class is used to represent a room
+ * @author Adrien Ardra
+ * @see Serializable
+ */
 public class Room extends Serializable
 {
     public int size;

@@ -1,8 +1,9 @@
 package com.AdrienArdraRamadhanJSleepMN;
+
 /**
- * Write a description of class Renter here.
+ * this class contains renter data
  *
- * @author (your name)
+ * @author Adrien Ardra
  * @version (a version number or a date)
  */
 import com.AdrienArdraRamadhanJSleepMN.dbjson.Serializable;

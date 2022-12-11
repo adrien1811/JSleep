@@ -4,10 +4,9 @@ package com.AdrienArdraRamadhanJSleepMN;
 import com.AdrienArdraRamadhanJSleepMN.dbjson.Serializable;
 
 /**
- * Write a description of class Complaint here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * This class is used to store the information of a complaint.
+ * @author Adrien Ardra
+ * @see Serializable
  */
 public class Complaint extends Serializable
 {

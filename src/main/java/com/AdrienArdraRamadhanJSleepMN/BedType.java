@@ -7,10 +7,9 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Enumeration class BedType - write a description of the enum class here
- *
- * @author (your name here)
- * @version (version number or date here)
+ * Enumeration class BedType
+ * This class is used to represent the bed type of a room
+ * @author Adrien Ardra
  */
 public enum BedType
 {

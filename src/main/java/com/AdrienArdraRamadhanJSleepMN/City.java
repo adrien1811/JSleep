@@ -7,11 +7,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+
 /**
- * Enumeration class City - write a description of the enum class here
- *
- * @author (your name here)
- * @version (version number or date here)
+ * Enumeration class City
+ * This class is used to represent the city of a room
+ * @author Adrien Ardra
  */
 public enum City
 {

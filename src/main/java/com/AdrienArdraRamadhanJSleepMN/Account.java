@@ -2,6 +2,11 @@ package com.AdrienArdraRamadhanJSleepMN;
 
 
 import com.AdrienArdraRamadhanJSleepMN.dbjson.Serializable;
+/**
+ * This class is used to store the information of a user account.
+ * @author Adrien Ardra
+ * @see Serializable
+ */
 
 public class Account extends Serializable {
 
@@ -24,6 +29,11 @@ public class Account extends Serializable {
         this.email = email;
         this.password = password;
     }
+    /**
+     * This method is used to validate the email and password of the account.
+     * @author Adrien Ardra
+     * @return Returns true if the email and password are valid.
+     */
     public boolean validate(){
         if(this.email.matches(REGEX_EMAIL) && this.password.matches(REGEX_PASSWORD)){
             return true;
